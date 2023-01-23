@@ -4,7 +4,7 @@
 
 
 ## Use the vizualizeAlignmentsWorkflow.sh for visualizing read coverage.
-- Takes as input a cram file
+- Takes as input a cram or bam file
 - Makes intermediate file based off of bed file: ivls_of_interest.bed
 - Uses bedtools multicov to count alignments from cram overlapping each 
   interval as specified in the intermediate file created by the workflow
