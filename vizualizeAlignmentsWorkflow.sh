@@ -15,9 +15,6 @@ if [ -z $1 ]; then
 	exit 0
 fi
 
-# Remove the previous file if it is there
-rm intervals.txt
-
 # step by 1000
 inv=0
 for num in $(seq $((start_region-flank)) 1000 $((end_region+flank)))
