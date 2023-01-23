@@ -45,4 +45,4 @@ awk -v mean=`awk '{ total += $5 } END { print total/NR }' JMS-6613-LIB-PDPGJS.mu
 Rscript --vanilla plotCNV.R $fileName $start_region $end_region
 
 # Clean up
-rm normalized.bin.count.txt JMS-6673-LIB-PDPGJS.multicov.tsv intervals.txt
+rm normalized.bin.count.txt *.multicov.tsv intervals.txt
