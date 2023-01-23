@@ -1,5 +1,7 @@
 # CNV-Visualizer
 
+<img width="1602" alt="Screen Shot 2023-01-23 at 3 32 16 PM" src="https://user-images.githubusercontent.com/55114836/214154637-e1f653e7-bd57-48f1-b2d6-380e397fe147.png">
+
 ## Use the vizualizeAlignmentsWorkflow.sh for visualizing read coverage.
 - Takes as input a cram file
 - Makes intermediate file based off of bed file: ivls_of_interest.bed
