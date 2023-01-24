@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
 # Change the start and end positions of the CNV you want to visualize here:
-start_region=162336527
-end_region=162448611
+start_region=155218456
+end_region=155241513
 # Set the flanking region that will be visualized on either side
 # of the CNV window specified above:
 flank=200000
+# Set the chromosome number
+chr=chr1
 
 # provide cram as cmd line argument
 cram=$1
@@ -20,7 +22,7 @@ inv=0
 for num in $(seq $((start_region-flank)) 1000 $((end_region+flank)))
 do
 	let "inv++"
-	echo chr6$'\t'$num$'\t'$((num+1000))$'\t'inv$inv >> intervals.txt
+	echo $chr$'\t'$num$'\t'$((num+1000))$'\t'inv$inv >> intervals.txt
 done
 
 # Bedtools multicov step
@@ -37,7 +39,7 @@ bedtools multicov \
 #	- Divide each bin count by average to normalize
 #	- Take log of each bin count to center everything around 0
 
-awk -v mean=`awk '{ total += $5 } END { print total/NR }' JMS-6613-LIB-PDPGJS.multicov.tsv` \
+awk -v mean=`awk '{ total += $5 } END { print total/NR }' ${fileName}.multicov.tsv` \
 	'{ print $2"\t"$3"\t"log($5/mean)/log(10) }' ${fileName}.multicov.tsv \
 	> normalized.bin.count.txt
 
