@@ -40,7 +40,7 @@ ggplot(data = fin, aes(x=pos, y=val)) +
 	ylab("Log Count Aligned Overlaps")
 
 #save plot
-ggsave(paste0(args[1],"_", args[2], "_", args[3], "_CNV_plot_with_Gene_start_end.png"), units = "cm", width = 20, height = 10)
+ggsave(paste0(args[1],"_", args[4], "_", args[2], "_", args[3], "_CNV_plot_with_Gene_start_end.png"), units = "cm", width = 20, height = 10)
 # File format cramfileName_startCNV_endCNV_CNV_plot.png
 
 ggplot(data = fin, aes(x=pos, y=val)) +
@@ -49,5 +49,5 @@ ggplot(data = fin, aes(x=pos, y=val)) +
 	ylab("Log Count Aligned Overlaps")
 
 #save plot
-ggsave(paste0(args[1],"_", args[2], "_", args[3], "_CNV_plot.png"), units = "cm", width = 20, height = 10)
-# File format cramfileName_startCNV_endCNV_CNV_plot.png
+ggsave(paste0(args[1],"_", args[4], "_", args[2], "_", args[3], "_CNV_plot.png"), units = "cm", width = 20, height = 10)
+# File format cramfileName_gene_startCNV_endCNV_CNV_plot.png
